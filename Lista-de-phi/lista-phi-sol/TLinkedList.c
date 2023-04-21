@@ -49,8 +49,6 @@ int TLinkedList_print(TLinkedList* lista){
     return size;
 }
 
-//Auxiliares
-
 TNo* TNo_createNFill(int info){
     TNo* novo = malloc(sizeof(TNo));
     if(novo!=NULL){
