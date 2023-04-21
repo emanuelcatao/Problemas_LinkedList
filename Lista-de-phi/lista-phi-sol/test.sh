@@ -13,7 +13,7 @@ for f in $(ls testes/*.in)
 do
     echo "---------------------------------------------"
     output="$(./a < $f)"
-    expected_output="$(cat $f-out$machine)"
+    expected_output="$(cat $f-out)"
     teste_ok=0
     if [ $? -eq 0 ] ; then
       teste_ok=1

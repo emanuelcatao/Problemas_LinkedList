@@ -30,11 +30,9 @@ _Bool TLinkedList_insert_end(TLinkedList*, int);
 /**
  * Imprime uma lista 
  * @param TLinkedList* ponteiro para uma lista válida
+ * @return int referente ao número de nós da lista
  *  */
-void TLinkedList_print(TLinkedList*);
+int TLinkedList_print(TLinkedList*);
 
-int TLinkedList_FromSquares(TLinkedList*);
-
-int TLinkedList_getFim(TLinkedList*);
 
 #endif

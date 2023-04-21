@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 typedef struct no {
     int info;
     struct no* prox;
@@ -13,23 +14,13 @@ struct linked_list{
     TNo* inicio;
     TNo* fim;
 };
+
 TLinkedList* TLinkedList_create(){
     TLinkedList* nova = malloc(sizeof(TLinkedList));
     if(nova!=NULL){
         nova->inicio = NULL;
         nova->fim = NULL;
     } return nova;
-}
-_Bool TLinkedList_insert_begin(TLinkedList* lista, int info){
-    TNo* novo = TNo_createNFill(info);
-    if(novo==NULL) return false;
-    
-    if(lista->inicio != NULL)
-        novo->prox = lista->inicio;
-    lista->inicio = novo;
-    if(lista->fim == NULL)
-      lista->fim = novo;
-    return true;
 }
 
 _Bool TLinkedList_insert_end(TLinkedList* lista, int info){
@@ -43,13 +34,19 @@ _Bool TLinkedList_insert_end(TLinkedList* lista, int info){
     lista->fim = novo;
     return true;
 }
-void TLinkedList_print(TLinkedList* lista){
+
+int TLinkedList_print(TLinkedList* lista){
     TNo* aux = lista->inicio;
-    while(aux!=NULL){
-        printf("%d, ", aux->info);
+    int size = 0;
+    while(aux->prox!=NULL){
+        size++;
+        printf("%d -> ", aux->info);
         aux = aux->prox;
     }
-    putchar('\n');
+    size++;
+    printf("%d\n", aux->info);
+
+    return size;
 }
 
 //Auxiliares
@@ -69,17 +66,4 @@ void TLinkedList_destroy(TLinkedList* lista){
         aux = aux->prox;
         free(aux2);
     }
-}
-int TLinkedList_FromSquares(TLinkedList* lista){
-    TNo* aux = lista->inicio;
-    int result = 0;
-    while(aux!=NULL){
-        result += (aux->info)*(aux->info);
-        aux = aux->prox;
-    }
-    return result;
-}
-
-int TLinkedList_getFim(TLinkedList* lista){
-  return lista->fim->info;
 }
