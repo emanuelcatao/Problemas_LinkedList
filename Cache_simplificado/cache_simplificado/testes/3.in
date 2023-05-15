@@ -1,0 +1,12 @@
+Cache 3
+put 1 2
+put 2 1 
+get 1
+put 3 3
+get 2
+put 4 4
+put 4 5
+get 2
+get 3
+get 4
+0
