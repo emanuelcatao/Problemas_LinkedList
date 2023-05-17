@@ -11,18 +11,6 @@ typedef struct dlinked_list TDLinkedList;
  */
 TDLinkedList* TDLinkedList_create();
 /**
- * @brief Remove um nó da lista duplamente encadeada, a partir do inicio
- * 
- * @return _Bool
- */
-_Bool TDLinkedList_remove_from_begin(TDLinkedList*);
-/**
- * @brief Remove um nó da lista duplamente encadeada, a partir do fim
- * 
- * @return _Bool 
- */
-_Bool TDLinkedList_remove_from_end(TDLinkedList*);
-/**
  * @brief Insere um nó na lista duplamente encadeada, a partir do fim
  * 
  * @return _Bool 
@@ -34,12 +22,6 @@ _Bool TDLinkedList_insert_end(TDLinkedList*, int);
  * @return  
  */
 void TDLinkedList_print(TDLinkedList*);
-/**
- * @brief Libera a instancia da lista duplamente encadeada
- * 
- * @return 
- */
-void TDLinkedList_destroy(TDLinkedList*);
 /**
  * @brief Reordena os nos da lista
  * 

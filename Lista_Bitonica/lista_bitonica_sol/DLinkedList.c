@@ -37,24 +37,6 @@ _Bool TDLinkedList_insert_end(TDLinkedList* lista, int info){
     return true;
 }
 
-_Bool TDLinkedList_remove_from_begin(TDLinkedList* lista){
-    if(lista->inicio == NULL) return false;
-
-    lista->inicio = lista->inicio->prox;
-    lista->inicio->ant = NULL;
-
-    return true;
-}
-
-_Bool TDLinkedList_remove_from_end(TDLinkedList* lista){
-    if(lista->fim == NULL) return false;
-
-    lista->fim = lista->fim->ant;
-    lista->fim->prox = NULL;
-
-    return true;
-}
-
 void TDLinkedList_print(TDLinkedList* lista){
     TNo* aux = lista->inicio;
     while(aux!=NULL){
@@ -62,16 +44,6 @@ void TDLinkedList_print(TDLinkedList* lista){
         aux = aux->prox;
     }
     putchar('\n');
-}
-
-void TDLinkedList_destroy(TDLinkedList* lista){
-    TNo* node = lista->inicio;
-    while (node != NULL) {
-        TNo* temp = node->prox;
-        free(node);
-        node = temp;
-    }
-    free(lista);
 }
 
 TNo* sort(TDLinkedList *lista) {
